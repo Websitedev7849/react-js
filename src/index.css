@@ -1,3 +1,7 @@
+:root{
+  --brdr: 1px solid white;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -8,4 +12,34 @@ body {
   background-color: black;
   height: 50rem;
   width: 100%;
+}
+
+.navbar{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2rem;
+}
+
+.web-head{
+  background-color: #ca4444;
+  font-size: 1.3rem;
+  width: 6rem;
+  padding: 7px;
+  border-radius: 0.5rem;
+}
+
+.links{
+  width: 15rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 25px;
+}
+
+.links a{
+  color: #e7e3e3;
+  text-decoration: none;
+}
+
+.links a:last-child{
+  color: #ca4444;
 }

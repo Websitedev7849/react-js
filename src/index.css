@@ -1,45 +1,63 @@
 :root{
-  --brdr: 1px solid white;
+  --brdr: 1px solid black;
 }
 
 body {
   margin: 0;
   padding: 0;
-  color: white;
+  font-family: arial;
 }
 
 .main{
-  background-color: black;
-  height: 50rem;
+  border: var(--brdr);
+  height: 45rem;
   width: 100%;
 }
 
-.navbar{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 2rem;
-}
+  .navbar{
+    height: 5.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    padding: 2rem 4rem;
+  }
 
-.web-head{
-  background-color: #ca4444;
-  font-size: 1.3rem;
-  width: 6rem;
-  padding: 7px;
-  border-radius: 0.5rem;
-}
+    .search-bar{
+      position: relative;
+      width: 36rem;
+      height: 1.8rem;
+      margin-left: -5px;
+    }
+      .search-bar img{
+        height: 17px;
+        width: 17px;
+        position: absolute;
+        top: 0.4rem;
+        left: 0.9rem;
+        z-index: 1;
+      }
 
-.links{
-  width: 15rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 25px;
-}
+      .search{
+        height: 1.8rem;
+        width: 100%;
+        position: absolute;
+        top: 0%;
+        padding-left: 2.8rem;
+        border: none;
+      }
 
-.links a{
-  color: #e7e3e3;
-  text-decoration: none;
-}
+      .search::placeholder{
+        font: 17px arial;
+      }
 
-.links a:last-child{
-  color: #ca4444;
-}
+      .search:focus{
+        outline-width: 0;
+        background-color: #fafafa;
+        border-radius: 6px;
+      }
+
+    .Notes{
+      font-size: 2rem;
+    }
+    
+

@@ -1,15 +1,4 @@
-import { useState } from "react";
-
-const Task = () => {
-    const [tasks, useTask] = useState([
-        {taskBody: "This is task content", taskCreatedDate: "May 21, 2020" },
-        {taskBody: "Next thing to do is add click event on task card to view in full size", taskCreatedDate: "May 30, 2020" },
-        {taskBody: "Next thing to do is add click event on task card to view in full size", taskCreatedDate: "May 30, 2020" },
-        {taskBody: "Next thing to do is add click event on task card to view in full size", taskCreatedDate: "May 30, 2020" },
-        {taskBody: "Next thing to do is add click event on task card to view in full size", taskCreatedDate: "May 30, 2020" },
-        {taskBody: "Next thing to do is add click event on task card to view in full size", taskCreatedDate: "May 30, 2020" },
-        {taskBody: "Next thing to do is add click event on task card to view in full size", taskCreatedDate: "May 30, 2020" },
-    ]);
+const Task = ({ tasks }) => {
 
     return (
         <div className="task-container">

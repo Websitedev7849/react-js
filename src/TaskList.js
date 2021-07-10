@@ -1,1 +1,0 @@
-// Use Prop to return template for blog list here

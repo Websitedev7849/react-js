@@ -1,4 +1,4 @@
-const Task = ({ tasks }) => {
+const Task = ({ tasks, DeleteTask }) => {
 
     return (
         <div className="task-container">
@@ -6,8 +6,8 @@ const Task = ({ tasks }) => {
                 <div className="task-card" key={index}>
                     <p className="task-body">{ task.taskBody }</p>
                     <p className="task-date">{ task.taskCreatedDate }</p>
-                    <button className="edit-btn" type="button">
-                        <img src="./images/edit.png" alt="edit button"/>
+                    <button className="delete-btn" type="button" onClick = {() => DeleteTask(index)}>
+                        <img src="./images/bin.png" alt="edit button"/>
                     </button>
                 </div>
             ))}

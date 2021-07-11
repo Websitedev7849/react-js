@@ -5,10 +5,13 @@ const AddTaskWindow = ({openOrCloseAddTaskWindow, tasks, useTasks}) => {
     let [text, setText] = useState(''); 
     let individualTask = {};
 
+    let bgColors = ["#eb826f", "#bff195", "#9759e9", "#e95984", "#eb8876", "#7691eb", "#7876eb"];
+
     const HandleSubmit = e => {
         e.preventDefault();
         individualTask.taskBody = text;
         individualTask.taskCreatedDate = date;
+        individualTask.bgColor = bgColors[Math.floor(Math.random() * bgColors.length)];
         tasks.push(individualTask);
         useTasks(tasks);
         

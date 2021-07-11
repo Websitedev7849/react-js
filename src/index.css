@@ -177,28 +177,12 @@ body {
       display: grid;
       grid-template-columns: 1fr;
       grid-template-rows: 3fr 1fr;
-      background-color: #ebb876;
+      background-color: #7876eb;
       height: 11.2rem;
       width: 11.2rem;
       padding: 0.5rem;
       border-radius: 0.7rem;
       box-shadow: 3px 3px 5px #00000038;
-    }
-
-    .task-card:nth-child(n+1){
-      background-color: #eb826f;
-    }
-
-    .task-card:nth-child(2n+1){
-      background-color: #bff195;
-    }
-
-    .task-card:nth-child(3n+1){
-      background-color: #9759e9;
-    }
-    
-    .task-card:nth-child(4n+1){
-      background-color: #e95984;
     }
 
       .task-body{

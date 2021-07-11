@@ -20,11 +20,19 @@ function App() {
     useTasks(newTasks);
   };
 
+  let [searchWords, setSearchWord] = useState("");
+  
+    const filteredTask = (task) => {
+      if(searchWords === "" || searchWords === undefined)
+        return true;
+      return task.taskBody.includes(searchWords) || task.taskCreatedDate.includes(searchWords);
+    }
+
   return (
     <div className="App">
       <section className="main">
-        <Navbar/>
-        {!isAddTaskWindowOpen && <Task tasks={tasks} DeleteTask={ DeleteTask }/>}
+        <Navbar setSearchWord = {setSearchWord} />
+        {!isAddTaskWindowOpen && <Task tasks={tasks.filter(task => filteredTask(task))} DeleteTask={ DeleteTask }/>}
         {isAddTaskWindowOpen && <AddTaskWindow openOrCloseAddTaskWindow={openOrCloseAddTaskWindow} tasks={tasks} useTasks={useTasks} /> }
         {!isAddTaskWindowOpen && <AddTask openOrCloseAddTaskWindow={openOrCloseAddTaskWindow}/> }
       </section>

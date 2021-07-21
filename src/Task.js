@@ -7,7 +7,7 @@ const Task = ({ tasks, DeleteTask }) => {
                     <p className="task-body">{ task.taskBody }</p>
                     <p className="task-date">{ task.taskCreatedDate }</p>
                     <button className="delete-btn" type="button" onClick = {() => DeleteTask(task.id)}>
-                        <img src="./images/bin.png" alt="edit button"/>
+                        <img src="./images/bin.svg" alt="edit button"/>
                     </button>
                 </div>
             ))}

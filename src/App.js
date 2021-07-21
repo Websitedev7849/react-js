@@ -15,8 +15,8 @@ function App() {
     isAddTaskWindowOpen? setIsTaskWindowOpen(false) : setIsTaskWindowOpen(true);
   };
 
-  const DeleteTask = (i) => {
-    const newTasks = tasks.filter((task, index) => index !== i);
+  const DeleteTask = (id) => {
+    const newTasks = tasks.filter((task, index) => task.id !== id);
     useTasks(newTasks);
   };
 

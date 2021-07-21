@@ -9,6 +9,7 @@ const AddTaskWindow = ({openOrCloseAddTaskWindow, tasks, useTasks}) => {
 
     const HandleSubmit = e => {
         e.preventDefault();
+        individualTask.id = new Date().getTime();
         individualTask.taskBody = text;
         individualTask.taskCreatedDate = date;
         individualTask.bgColor = bgColors[Math.floor(Math.random() * bgColors.length)];

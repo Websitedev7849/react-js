@@ -1,5 +1,5 @@
 import { useState } from "react";
-const AddTaskWindow = ({openOrCloseAddTaskWindow, tasks, useTasks}) => {
+const AddTaskWindow = ({tasks, useTasks}) => {
 
     let [date, setDate] = useState('');
     let [text, setText] = useState(''); 
@@ -15,9 +15,9 @@ const AddTaskWindow = ({openOrCloseAddTaskWindow, tasks, useTasks}) => {
         individualTask.bgColor = bgColors[Math.floor(Math.random() * bgColors.length)];
         tasks.push(individualTask);
         useTasks(tasks);
-        
-        // closing add task window on submit 
-        openOrCloseAddTaskWindow();
+    
+        //redirecting to homepage "/"
+        window.location.href = "/";
     };
 
     return (
@@ -36,7 +36,7 @@ const AddTaskWindow = ({openOrCloseAddTaskWindow, tasks, useTasks}) => {
                     placeholder="Enter you Message here"
                     onChange={(e) => { setText(e.target.value) }}></textarea>
                 </div>
-                <button className="form-cancel-btn" type="button" onClick={openOrCloseAddTaskWindow}>Cancel</button>
+                <a className="form-cancel-btn" href="/">Cancel</a>
                 <button className="form-submit-btn" type="submit">Add Task</button>
             </form>
         </section>

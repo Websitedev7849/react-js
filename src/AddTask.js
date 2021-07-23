@@ -1,9 +1,7 @@
-const AddTask = ({openOrCloseAddTaskWindow}) => {
-
-   
+const AddTask = () => {
 
     return (
-        <button className="add-task" onClick = {openOrCloseAddTaskWindow}>+</button>
+        <a className="add-task" href="/addTaskWindow">+</a>
     );
 }
  

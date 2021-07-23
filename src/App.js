@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import  Navbar  from "./Navbar";
 import AddTask from "./AddTask";
 import Task from "./Task";
@@ -8,12 +9,6 @@ function App() {
 
   
   let [tasks, useTasks] = useState([]);
-
-  const [isAddTaskWindowOpen, setIsTaskWindowOpen] = useState(false); 
-
-  const openOrCloseAddTaskWindow = () => {
-    isAddTaskWindowOpen? setIsTaskWindowOpen(false) : setIsTaskWindowOpen(true);
-  };
 
   const DeleteTask = (id) => {
     const newTasks = tasks.filter((task, index) => task.id !== id);
@@ -32,9 +27,20 @@ function App() {
     <div className="App">
       <section className="main">
         <Navbar setSearchWord = {setSearchWord} />
-        {!isAddTaskWindowOpen && <Task tasks={tasks.filter(task => filteredTask(task))} DeleteTask={ DeleteTask }/>}
-        {isAddTaskWindowOpen && <AddTaskWindow openOrCloseAddTaskWindow={openOrCloseAddTaskWindow} tasks={tasks} useTasks={useTasks} /> }
-        {!isAddTaskWindowOpen && <AddTask openOrCloseAddTaskWindow={openOrCloseAddTaskWindow}/> }
+
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <Task tasks={tasks.filter(task => filteredTask(task))} DeleteTask={ DeleteTask }/>
+            </Route>
+            <Route exact path="/addTaskWindow">
+              <AddTaskWindow tasks={tasks} useTasks={useTasks} />
+            </Route>
+          </Switch>
+        </Router>
+
+        <AddTask/> 
+       
       </section>
     </div>
   );

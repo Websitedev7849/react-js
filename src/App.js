@@ -6,7 +6,7 @@ import Task from "./Task";
 import AddTaskWindow from './AddTaskWindow';
 
 function App() {
-
+  
   
   let [tasks, useTasks] = useState([]);
 
@@ -15,34 +15,33 @@ function App() {
     useTasks(newTasks);
   };
 
+  // Search words from navigation bar
   let [searchWords, setSearchWord] = useState("");
   
-    const filteredTask = (task) => {
-      if(searchWords === "" || searchWords === undefined)
-        return true;
-      return task.taskBody.includes(searchWords) || task.taskCreatedDate.includes(searchWords);
-    }
-
   return (
-    <div className="App">
-      <section className="main">
-        <Navbar setSearchWord = {setSearchWord} />
+    <Router>
+      <div className="App">
+        <section className="main">
+          <Navbar setSearchWord = {setSearchWord} />
 
-        <Router>
-          <Switch>
-            <Route exact path="/">
-              <Task tasks={tasks.filter(task => filteredTask(task))} DeleteTask={ DeleteTask }/>
-            </Route>
-            <Route exact path="/addTaskWindow">
-              <AddTaskWindow tasks={tasks} useTasks={useTasks} />
-            </Route>
-          </Switch>
-        </Router>
+            <Switch>
+              
+              <Route exact path="/">
+                <Task tasks={tasks} DeleteTask={ DeleteTask } searchWords={searchWords}/>
+              </Route>
 
-        <AddTask/> 
-       
-      </section>
-    </div>
+              <Route exact path="/addTaskWindow">
+                <AddTaskWindow tasks={tasks} useTasks={useTasks} />
+              </Route>
+
+            </Switch>
+
+            {/* Add task button */}
+            <AddTask/> 
+          
+        </section>
+      </div>
+    </Router>
   );
 }
 

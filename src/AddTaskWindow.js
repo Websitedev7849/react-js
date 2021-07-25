@@ -1,9 +1,13 @@
 import { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
 const AddTaskWindow = ({tasks, useTasks}) => {
 
     let [date, setDate] = useState('');
     let [text, setText] = useState(''); 
     let individualTask = {};
+
+    // hook to redirect to home page without reloading the app
+    const history = useHistory();
 
     let bgColors = ["#eb826f", "#bff195", "#9759e9", "#e95984", "#eb8876", "#7691eb", "#7876eb"];
 
@@ -17,7 +21,7 @@ const AddTaskWindow = ({tasks, useTasks}) => {
         useTasks(tasks);
     
         //redirecting to homepage "/"
-        window.location.href = "/";
+        history.push("/");
     };
 
     return (
@@ -36,7 +40,7 @@ const AddTaskWindow = ({tasks, useTasks}) => {
                     placeholder="Enter you Message here"
                     onChange={(e) => { setText(e.target.value) }}></textarea>
                 </div>
-                <a className="form-cancel-btn" href="/">Cancel</a>
+                <Link className="form-cancel-btn" to="/">Cancel</Link>
                 <button className="form-submit-btn" type="submit">Add Task</button>
             </form>
         </section>

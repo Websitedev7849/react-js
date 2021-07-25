@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 const AddTask = () => {
 
     return (
-        <a className="add-task" href="/addTaskWindow">+</a>
+        <Link className="add-task" to="/addTaskWindow">+</Link>
     );
 }
  

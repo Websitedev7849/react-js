@@ -17,10 +17,25 @@ function App() {
 
   // Search words from navigation bar
   let [searchWords, setSearchWord] = useState("");
+
+  const toggleTheme = e => {
+    let target = e.target.parentElement;
+    
+    if (target.classList.contains("light-theme")) {
+      target.classList.remove("light-theme");
+      target.classList.add("dark-theme");
+      return;
+    }
+    
+    target.classList.remove("dark-theme");
+    target.classList.add("light-theme");
+  }
   
   return (
     <Router>
-      <div className="App">
+      <div className="App light-theme">
+        <label htmlFor="toggle-dark-theme"></label>
+        <input type="checkbox" id="toggle-dark-theme" onClick={e => toggleTheme(e)} />
         <section className="main">
           <Navbar setSearchWord = {setSearchWord} />
 

@@ -14,6 +14,24 @@ body {
 }
 
 
+.light-theme{
+  --color: #000000;
+  --bg-color: #ffffff;
+}
+
+.dark-theme{
+  --color: #ffffff;
+  --bg-color: #000000;
+}
+
+.App{
+  background-color: var(--bg-color);
+  color: var(--color);
+  transition: all 0.5s ease-in;
+}
+
+
+
 /* <Navbar/>  */
 
   .navbar{

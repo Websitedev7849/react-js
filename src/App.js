@@ -4,6 +4,7 @@ import  Navbar  from "./Navbar";
 import AddTask from "./AddTask";
 import Task from "./Task";
 import AddTaskWindow from './AddTaskWindow';
+import ThemeToggle from "./ThemeToggle";
 
 function App() {
   
@@ -18,24 +19,15 @@ function App() {
   // Search words from navigation bar
   let [searchWords, setSearchWord] = useState("");
 
-  const toggleTheme = e => {
-    let target = e.target.parentElement;
-    
-    if (target.classList.contains("light-theme")) {
-      target.classList.remove("light-theme");
-      target.classList.add("dark-theme");
-      return;
-    }
-    
-    target.classList.remove("dark-theme");
-    target.classList.add("light-theme");
-  }
+  let [theme, useTheme] = useState("light-theme");
+  
   
   return (
     <Router>
-      <div className="App light-theme">
-        <label htmlFor="toggle-dark-theme"></label>
-        <input type="checkbox" id="toggle-dark-theme" onClick={e => toggleTheme(e)} />
+      <div className={`App ${theme}`}>
+
+      <ThemeToggle theme={theme} useTheme={useTheme}/>
+
         <section className="main">
           <Navbar setSearchWord = {setSearchWord} />
 

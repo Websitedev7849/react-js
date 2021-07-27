@@ -21,6 +21,9 @@ function App() {
 
   let [theme, useTheme] = useState("light-theme");
   
+   // change the fill(style) of search.svg in Navbar component
+   let [fill, useFill] = useState("#000000");
+ 
   
   return (
     <Router>
@@ -29,7 +32,7 @@ function App() {
       <ThemeToggle theme={theme} useTheme={useTheme}/>
 
         <section className="main">
-          <Navbar setSearchWord = {setSearchWord} />
+          <Navbar fill={fill} theme={theme} useFill={useFill} setSearchWord = {setSearchWord} />
 
             <Switch>
               

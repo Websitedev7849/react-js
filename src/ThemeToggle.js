@@ -1,10 +1,18 @@
+import { useState } from "react";
 
 const ThemeToggle = ({theme, useTheme}) => {
 
+    const [toggled, useToggled] = useState("");
 
     const HandleClick = () => {
 
         // callback returns value based on theme variable.
+        useToggled(() => {
+            if (toggled === "toggled") 
+                return ""
+            return "toggled"
+        });
+
         useTheme(() => {
             if (theme === "light-theme")
                 return "dark-theme";
@@ -13,9 +21,13 @@ const ThemeToggle = ({theme, useTheme}) => {
     }
 
     return (
-        <div>
-        <label htmlFor="toggle-dark-theme"></label>
-        <input type="checkbox" id="toggle-dark-theme" onClick={HandleClick} />
+        <div className="theme-toggle-container">
+            <label htmlFor="toggle-theme-btn" className="label-toggle">
+                <div className="circle-container">
+                    <div className={`circle ${toggled}`}></div>
+                </div>
+            </label>
+            <input type="checkbox" id="toggle-theme-btn" onClick={HandleClick} />
         </div>
     );
 }

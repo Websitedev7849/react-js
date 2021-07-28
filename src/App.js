@@ -8,6 +8,7 @@ import ThemeToggle from "./ThemeToggle";
 
 function App() {
   
+  // TODO create custom Toggle button in ThemeToggle.js
   
   let [tasks, useTasks] = useState([]);
 

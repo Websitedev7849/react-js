@@ -2,10 +2,15 @@
   --brdr: 1px solid black;
 }
 
-body {
+body, #root {
   margin: 0;
   padding: 0;
   font-family: arial;
+  height: auto;
+}
+
+#root{
+  height: 100%;
 }
 
 .main{
@@ -18,18 +23,25 @@ body {
   --color: #000000;
   --bg-color: #ffffff;
   --search-focused: #eeeeee;
+  --form-bg-color: #ffffff;
+  --form-box-shadow: 1px 1px 3px #0000004f;
 }
 
 .dark-theme{
   --color: #ffffff;
   --bg-color: #000000;
   --search-focused: #424141;
+  --form-bg-color: #181818;
+  --form-box-shadow: 1px 1px 3px #b19d9d62;
+
 }
 
 .App{
   background-color: var(--bg-color);
   color: var(--color);
   transition: all 0.5s ease-in;
+  height: 100%;
+  margin: 0;
 }
 
 /* <ThemeToggle/> */
@@ -127,12 +139,13 @@ body {
   /* <AddTaskWindow /> */
   .add-task-window{
     display: grid;
-    background: #ffffff;
+    background: var(--form-bg-color);
     height: 30rem;
     width: 40rem;
     padding: 0.5rem;
-    box-shadow: 1px 1px 3px #0000004f;
+    box-shadow: var(--form-box-shadow);
     margin-left: 10rem;
+    transition: all 0.5s;
   }
   
     .form-add-task{
@@ -145,6 +158,7 @@ body {
     }
 
     .form-header{
+      color: var(--color);
       margin-left: 2rem;
     }
 
@@ -161,6 +175,9 @@ body {
       }
 
         .task-date-container input{
+          border: 2px solid var(--color);
+          color: var(--color);
+          background-color: var(--bg-color);
           margin-top: 5px;
         }
 
@@ -174,6 +191,9 @@ body {
       }
 
         .text-area textarea{
+          border: 2px solid var(--color);
+          color: var(--color);
+          background-color: var(--bg-color);
           margin-top: 5px;
           font: 15px arial;
           padding: 8px 8px;
@@ -198,17 +218,18 @@ body {
         align-items: center;
         margin: 1.9rem 7rem;
         padding: -8px;
-        border: 2px solid #000000;
+        border: 2px solid var(--color);
         background: none;
-        color: #000000;
+        color: var(--color);
         text-decoration: none;
       }
 
       .form-submit-btn{
         margin-top: -3.9rem;
-        color: #ffffff;
+        font-size: 1rem;
+        color: var(--bg-color);
         border: none;
-        background: #000000;
+        background: var(--color);
       }
 
       
@@ -251,7 +272,8 @@ body {
       width: 11.2rem;
       padding: 0.5rem;
       border-radius: 0.7rem;
-      box-shadow: 3px 3px 5px #00000038;
+      /* box-shadow: 3px 3px 5px #00000038; */
+      box-shadow: var(--form-box-shadow);
       color: #000000
     }
 

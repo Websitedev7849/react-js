@@ -14,7 +14,7 @@ const Navbar = ({fill, theme, useFill, setSearchWord}) => {
     
     useEffect(() => {
         Callback();
-    }, [theme] )
+    })
 
     return (
      <nav className="navbar">

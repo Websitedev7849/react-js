@@ -35,8 +35,8 @@ const AddTaskWindow = ({tasks, useTasks}) => {
                 <div className="text-area">
                     <label htmlFor="textarea">Your Message</label> <br />
                     <textarea name="textarea"
-                    cols="70" 
-                    rows="12"
+                    cols="65" 
+                    rows="10"
                     placeholder="Enter you Message here"
                     onChange={(e) => { setText(e.target.value) }}></textarea>
                 </div>

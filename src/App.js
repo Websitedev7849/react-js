@@ -4,7 +4,6 @@ import  Navbar  from "./Navbar";
 import AddTask from "./AddTask";
 import Task from "./Task";
 import AddTaskWindow from './AddTaskWindow';
-import ThemeToggle from "./ThemeToggle";
 
 function App() {
   
@@ -30,10 +29,8 @@ function App() {
     <Router>
       <div className={`App ${theme}`}>
 
-      <ThemeToggle theme={theme} useTheme={useTheme}/>
-
         <section className="main">
-          <Navbar fill={fill} theme={theme} useFill={useFill} setSearchWord = {setSearchWord} />
+          <Navbar fill={fill} theme={theme} useFill={useFill} setSearchWord = {setSearchWord} useTheme = {useTheme} />
 
             <Switch>
               

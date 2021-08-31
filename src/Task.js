@@ -1,3 +1,5 @@
+import deleteBtn from "./assets/bin.svg";
+
 const Task = ({ tasks, DeleteTask, searchWords}) => {
 
     const filterTaskFunc = (task) => {
@@ -15,7 +17,7 @@ const Task = ({ tasks, DeleteTask, searchWords}) => {
                     <p className="task-body">{ task.taskBody }</p>
                     <p className="task-date">{ task.taskCreatedDate }</p>
                     <button className="delete-btn" type="button" onClick = {() => DeleteTask(task.id)}>
-                        <img src="./images/bin.svg" alt="edit button"/>
+                        <img src={deleteBtn} alt="edit button"/>
                     </button>
                 </div>
             ))}

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import deleteBtn from "./assets/bin.svg";
 
 const Task = ({ tasks, DeleteTask, searchWords}) => {
@@ -7,6 +8,15 @@ const Task = ({ tasks, DeleteTask, searchWords}) => {
           return true;
         return task.taskBody.includes(searchWords) || task.taskCreatedDate.includes(searchWords);
     };
+
+    useEffect(() => {
+        
+        // solve bug of github
+        if (window.location.hostname === "websitedev7849.github.io") { 
+            deleteBtn = "react-js/static/media/bin.5d614aef.svg";
+        }
+        
+    }, []);
 
     let filteredTask = tasks.filter(task => filterTaskFunc(task));
 
